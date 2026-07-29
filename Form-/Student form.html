@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px auto;
+            max-width: 900px;
+            color: #000;
+        }
+
+        /* Banner Header Styling */
+        .header-banner {
+            background-color: #cbe3fc;
+            text-align: center;
+            padding: 15px;
+            position: relative;
+            border: 1px solid #b0cbe8;
+        }
+        .header-banner h1 {
+            color: #8a1515;
+            margin: 0;
+            font-size: 32px;
+            font-family: 'Times New Roman', Times, serif;
+            letter-spacing: 1px;
+        }
+        .header-banner p {
+            color: #1b7a43;
+            font-style: italic;
+            font-size: 18px;
+            margin: 5px 0 0 0;
+            font-weight: bold;
+        }
+        .flower-icon {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 35px;
+        }
+        .flower-left { left: 20px; }
+        .flower-right { right: 20px; }
+
+        /* Section Headings */
+        .section-title {
+            font-weight: bold;
+            font-size: 16px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            text-decoration: underline;
+        }
+        .personal-title { color: #1a237e; }
+        .education-title { color: #6a1b9a; }
+        .account-title { color: #2e7d32; }
+        .upload-title { color: #c62828; }
+
+        /* Form Table Layout */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+        }
+        td {
+            padding: 6px 4px;
+            vertical-align: middle;
+        }
+        .label-col {
+            width: 180px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .colon-col {
+            width: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* Input Elements */
+        input[type="text"], 
+        input[type="email"], 
+        input[type="password"], 
+        input[type="date"], 
+        select {
+            width: 280px;
+            padding: 4px;
+            border: 1px solid #999;
+            border-radius: 2px;
+            box-sizing: border-box;
+        }
+        textarea {
+            width: 650px;
+            height: 80px;
+            border: 1px solid #999;
+            border-radius: 2px;
+            resize: vertical;
+        }
+        .inline-input {
+            width: 180px !important;
+            margin-left: 5px;
+        }
+
+        /* Divider Line */
+        hr {
+            border: 0;
+            border-top: 1px solid #999;
+            margin: 20px 0;
+        }
+
+        /* Buttons Styling */
+        .button-container {
+            text-align: center;
+            margin: 25px 0;
+        }
+        .btn {
+            padding: 6px 15px;
+            margin: 0 10px;
+            border: 1px solid #777;
+            background-color: #e1e1e1;
+            cursor: pointer;
+            font-size: 14px;
+            border-radius: 3px;
+        }
+        .btn-custom {
+            background-color: #fca1a6;
+            border: 1px solid #cd7479;
+        }
+        .btn:hover {
+            filter: brightness(0.95);
+        }
+
+        /* Footer Login text */
+        .login-footer {
+            text-align: center;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+        .login-footer a {
+            color: #6a1b9a;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-banner">
+        <span class="flower-icon flower-left">🌸</span>
+        <h1>STUDENT REGISTRATION FORM</h1>
+        <p>Create your account and join with us!</p>
+        <span class="flower-icon flower-right">🌸</span>
+    </div>
+
+    <form>
+        <div class="section-title personal-title">1. Personal Information</div>
+        <table>
+            <tr>
+                <td class="label-col">Full Name</td>
+                <td class="colon-col">:</td>
+                <td><input type="text" name="fullname"></td>
+            </tr>
+            <tr>
+                <td class="label-col">Email Address</td>
+                <td class="colon-col">:</td>
+                <td><input type="email" name="email"></td>
+            </tr>
+            <tr>
+                <td class="label-col">Mobile Number</td>
+                <td class="colon-col">:</td>
+                <td><input type="text" name="mobile"></td>
+            </tr>
+            <tr>
+                <td class="label-col">Date of Birth</td>
+                <td class="colon-col">:</td>
+                <td><input type="date" name="dob"></td>
+            </tr>
+            <tr>
+                <td class="label-col">Gender</td>
+                <td class="colon-col">:</td>
+                <td>
+                    <input type="radio" id="male" name="gender" value="male"> <label encoding="UTF-8" for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female" style="margin-left: 15px;"> <label for="female">Female</label>
+                    <input type="radio" id="other" name="gender" value="other" style="margin-left: 15px;"> <label id="other" for="other">Other</label>
+                </td>
+            </tr>
+            <tr>
+                <td class="label-col" style="vertical-align: top; padding-top: 8px;">Address</td>
+                <td class="colon-col" style="vertical-align: top; padding-top: 8px;">:</td>
+                <td><textarea name="address"></textarea></td>
+            </tr>
+        </table>
+
+        <hr>
+
+        <div class="section-title education-title">2. Education Details</div>
+        <table>
+            <tr>
+                <td class="label-col">Courses Interested In</td>
+                <td class="colon-col">:</td>
+                <td>
+                    <input type="checkbox" id="bca" name="courses" value="BCA"> <label for="bca">BCA</label>
+                    <input type="checkbox" id="bsc" name="courses" value="B.Sc (CS)" style="margin-left: 15px;"> <label encoding="UTF-8" for="bsc">B.Sc (CS)</label>
+                    <input type="checkbox" id="bcom" name="courses" value="B.Com" style="margin-left: 15px;"> <label for="bcom">B.Com</label>
+                    <input type="checkbox" id="bba" name="courses" value="BBA" style="margin-left: 15px;"> <label for="bba">BBA</label>
+                    <input type="checkbox" id="other_course" name="courses" value="Other" style="margin-left: 15px;"> <label for="other_course">Other</label>
+                    <input type="text" name="other_course_txt" class="inline-input">
+                </td>
+            </tr>
+            <tr>
+                <td class="label-col">Year of Study</td>
+                <td class="colon-col">:</td>
+                <td>
+                    <input type="radio" id="year1" name="year" value="1"> <label for="year1">1st Year</label>
+                    <input type="radio" id="year2" name="year" value="2" style="margin-left: 15px;"> <label for="year2">2nd Year</label>
+                    <input type="radio" id="year3" name="year" value="3" style="margin-left: 15px;"> <label for="year3">3rd Year</label>
+                    <input type="radio" id="year4" name="year" value="4" style="margin-left: 15px;"> <label for="year4">Final Year</label>
+                </td>
+            </tr>
+            <tr>
+                <td class="label-col">Department</td>
+                <td class="colon-col">:</td>
+                <td>
+                    <select name="department">
+                        <option value="">-- Select Department --</option>
+                        <option value="cs">Computer Science</option>
+                        <option value="commerce">Commerce</option>
+                        <option value="ba">Business Administration</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+
+        <hr>
+
+        <div class="section-title account-title">3. Account Information</div>
+        <table>
+            <tr>
+                <td class="label-col">Username</td>
+                <td class="colon-col">:</td>
+                <td><input type="text" name="username"></td>
+            </tr>
+            <tr>
+                <td class="label-col">Password</td>
+                <td class="colon-col">:</td>
+                <td><input type="password" name="password"></td>
+            </tr>
+            <tr>
+                <td class="label-col">Confirm Password</td>
+                <td class="colon-col">:</td>
+                <td><input type="password" name="confirm_password"></td>
+            </tr>
+        </table>
+
+        <hr>
+
+        <div class="section-title upload-title">4. Upload & Other Details</div>
+        <table>
+            <tr>
+                <td class="label-col">Upload Photo</td>
+                <td class="colon-col">:</td>
+                <td><input type="file" name="photo"></td>
+            </tr>
+            <tr>
+                <td class="label-col">How did you know about us?</td>
+                <td class="colon-col">:</td>
+                <td>
+                    <select name="referral">
+                        <option value="">-- Select Option --</option>
+                        <option value="friends">Friends</option>
+                        <option value="internet">Internet</option>
+                        <option value="advertisement">Advertisement</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="label-col" style="vertical-align: top; padding-top: 8px;">Additional Comments</td>
+                <td class="colon-col" style="vertical-align: top; padding-top: 8px;">:</td>
+                <td><textarea name="comments"></textarea></td>
+            </tr>
+        </table>
+
+        <hr>
+
+        <div class="button-container">
+            <button type="submit" class="btn">Submit Registration</button>
+            <button type="reset" class="btn">Reset Form</button>
+            <button type="button" class="btn btn-custom">Custom Button</button>
+        </div>
+
+        <div class="login-footer">
+            Already have an account? Click here to <a href="#">Login</a>
+        </div>
+    </form>
+
+</body>
+</html>
