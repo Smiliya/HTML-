@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background-color:#f2f2f2;
+        }
+
+        .container{
+            width:400px;
+            margin:50px auto;
+            background:white;
+            padding:20px;
+            border-radius:10px;
+            box-shadow:0 0 10px gray;
+        }
+
+        h2{
+            text-align:center;
+            color:blue;
+        }
+
+        label{
+            font-weight:bold;
+        }
+
+        input{
+            width:100%;
+            padding:8px;
+            margin-top:5px;
+            margin-bottom:15px;
+            border:1px solid gray;
+            border-radius:5px;
+        }
+
+        input[type="submit"]{
+            background:blue;
+            color:white;
+            border:none;
+            cursor:pointer;
+            font-size:16px;
+        }
+
+        input[type="submit"]:hover{
+            background:darkblue;
+        }
+    </style>
+
+    <script>
+        function validateForm()
+        {
+            var name=document.getElementById("name").value;
+            var email=document.getElementById("email").value;
+            var password=document.getElementById("password").value;
+            var phone=document.getElementById("phone").value;
+
+            if(name=="")
+            {
+                alert("Name cannot be empty");
+                return false;
+            }
+
+            if(email=="")
+            {
+                alert("Email cannot be empty");
+                return false;
+            }
+
+            var emailPattern=/^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+            if(!email.match(emailPattern))
+            {
+                alert("Enter a valid Email");
+                return false;
+            }
+
+            if(password.length<6)
+            {
+                alert("Password must contain at least 6 characters");
+                return false;
+            }
+
+            if(phone.length!=10 || isNaN(phone))
+            {
+                alert("Enter a valid 10-digit Mobile Number");
+                return false;
+            }
+
+            alert("Form Submitted Successfully");
+            return true;
+        }
+    </script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Registration Form</h2>
+
+<form onsubmit="return validateForm()">
+
+<label>Name</label>
+<input type="text" id="name">
+
+<label>Email</label>
+<input type="text" id="email">
+
+<label>Password</label>
+<input type="password" id="password">
+
+<label>Mobile Number</label>
+<input type="text" id="phone">
+
+<input type="submit" value="Submit">
+
+</form>
+
+</div>
+
+</body>
+</html>
